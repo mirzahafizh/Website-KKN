@@ -13,7 +13,7 @@
 
 <div class="flex   w-10/12 bg-white border-2 h-[500px] shadow-lg  mx-auto mt-20">
   <div class="flex flex-col w-1/4  p-4 border-r-2">
-    <p>List Tumbuhan</p>
+    <p>List Hewan</p>
   </div>
   <div class="flex flex-col w-3/4 p-4">
     <p>Deskripsi</p>
