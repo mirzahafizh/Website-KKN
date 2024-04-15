@@ -1,3 +1,25 @@
+<?php
+include 'config.php';
+
+// Query untuk mengambil semua artikel dari tabel artikels
+$sql = "SELECT * FROM artikels";
+$result = mysqli_query($conn, $sql);
+
+// Inisialisasi array untuk menyimpan data artikel
+$articles = [];
+
+// Cek apakah ada artikel yang ditemukan
+if (mysqli_num_rows($result) > 0) {
+    // Loop melalui setiap baris hasil query dan simpan data artikel ke dalam array
+    while ($row = mysqli_fetch_assoc($result)) {
+        $articles[] = $row;
+    }
+}
+
+// Tutup koneksi database
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,44 +27,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-
     <title>Artikel - Hutan Lindung Sungai Wain</title>
 </head>
 <body class="bg-gray-100">
 
 <?php include 'navbar.php'; ?>
 
+<div class="w-10/12 mx-auto my-10 p-4 bg-white shadow-lg rounded-lg">
+    <h1 class="text-3xl font-bold mb-6">Artikel Hutan Lindung Sungai Wain</h1>
 
-    <!-- Content -->
-    <div class="w-10/12 mx-auto my-10 p-4 bg-white shadow-lg rounded-lg">
-        <h1 class="text-3xl font-bold mb-6">Artikel Hutan Lindung Sungai Wain</h1>
-
-        <!-- Article 1 -->
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Judul Artikel Pertama</h2>
-            <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus auctor risus vel pretium. ...</p>
-            <a href="#" class="text-blue-500 hover:underline">Baca selengkapnya &rarr;</a>
+    <div class="bg-white  w-full p-6 ">
+    <?php foreach ($articles as $article): ?>
+        <div class="mb-8 bg-gray-100 p-6 rounded-lg hover:shadow-xl transition-transform transform hover:scale-105">
+            <a href="article_detail.php?id=<?= $article['id'] ?>" class="flex ">
+                <div class="mr-6 w-1/6 mb-4">
+                    <img src="../uploads/<?= $article['gambar'] ?>" alt="Gambar Artikel" class="w-auto h-40 mx-auto rounded-lg object-fit shadow-lg p-4 ">
+                </div>
+                <div class="mt-4 w-3/4 ">
+                    <h2 class="text-2xl font-bold mb-4"><?= $article['judul'] ?></h2>
+                    <p class="text-gray-700  h-[100px] break-words"><?= $article['konten'] ?>...</p>
+                </div>
+            </a>
         </div>
-
-        <!-- Article 2 -->
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Judul Artikel Kedua</h2>
-            <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus auctor risus vel pretium. ...</p>
-            <a href="#" class="text-blue-500 hover:underline">Baca selengkapnya &rarr;</a>
-        </div>
-
-        <!-- Add more articles as needed -->
-
+    <?php endforeach; ?>
     </div>
+    <!-- Add more articles as needed -->
+</div>
 
-    <script>
-        // Toggle mobile menu visibility
-        document.getElementById('mobile-menu-button').addEventListener('click', function () {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
 
-        
-    </script>
+
+
+<script>
+    // Toggle mobile menu visibility
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
 
 </body>
 </html>
