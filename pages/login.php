@@ -73,9 +73,7 @@ if (isset($_POST['login'])) {
                 name="login" class="bg-purple-600  text-white py-2 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 w-full">
                 Login
             </button>
-            <div class="text-center">
-                <a href="registrasi.php" class="text-sm text-purple-600">Belum punya akun? Daftar disini</a>
-            </div>
+
         </form>
         <?php
         // Menampilkan pesan kesalahan jika login gagal

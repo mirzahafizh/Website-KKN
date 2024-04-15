@@ -40,7 +40,7 @@ if(isset($_GET['id'])) {
 
 <div class="flex w-11/12 bg-white border-2 h-auto mb-8  shadow-lg mx-auto mt-20">
   <div class="flex flex-col w-1/3 sm:p-4 py-4 px-[6px] border-r-2">
-    <p>List Flora</p>
+    <p>List Fauna</p>
     <ul>
       <?php
       // Ambil list hewan dari database

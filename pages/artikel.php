@@ -38,14 +38,16 @@ mysqli_close($conn);
 
     <div class="bg-white  w-full p-6 ">
     <?php foreach ($articles as $article): ?>
-        <div class="mb-8 bg-gray-100 p-6 rounded-lg hover:shadow-xl transition-transform transform hover:scale-105">
+        <div class="mb-8 bg-gray-100  p-6 rounded-lg hover:shadow-xl transition-transform transform hover:scale-105">
             <a href="article_detail.php?id=<?= $article['id'] ?>" class="flex ">
                 <div class="mr-6 w-1/6 mb-4">
-                    <img src="../uploads/<?= $article['gambar'] ?>" alt="Gambar Artikel" class="w-auto h-40 mx-auto rounded-lg object-fit shadow-lg p-4 ">
+                    <img src="../uploads/<?= $article['gambar'] ?>" alt="Gambar Artikel" class="w-auto h-40 mx-auto rounded-lg object-fit mt-4 ">
                 </div>
                 <div class="mt-4 w-3/4 ">
                     <h2 class="text-2xl font-bold mb-4"><?= $article['judul'] ?></h2>
-                    <p class="text-gray-700  h-[100px] break-words"><?= $article['konten'] ?>...</p>
+                    <p class="text-gray-700 break-words">
+                        <?= substr($article['konten'], 0, 200) ?><?= strlen($article['konten']) > 200 ? '...' : '' ?>
+                    </p>
                 </div>
             </a>
         </div>

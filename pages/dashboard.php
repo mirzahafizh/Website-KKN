@@ -1,8 +1,31 @@
-<?
+<?php
+session_start(); // Memulai sesi
+
 include 'config.php';
 
+// Check if the user is already logged in
+if (!isset($_SESSION['username'])) {
+    // Redirect to login page if not logged in
+    header("Location: login.php");
+    exit; // Penting untuk menghentikan eksekusi kode selanjutnya setelah pengalihan header
+}
 
+// Proses logout ketika tombol logout ditekan
+if (isset($_POST['logout'])) {
+    // Hapus semua data sesi
+    session_unset();
+    // Hancurkan sesi
+    session_destroy();
+
+    // Redirect ke halaman login.php
+    header("Location: login.php");
+    exit();
+}
+
+// Menampilkan username jika diperlukan
+$username = $_SESSION['username'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
