@@ -3,6 +3,8 @@ session_start(); // Memulai sesi
 
 include 'config.php';
 
+// Ambil data semua user
+;
 // Check if the user is already logged in
 if (!isset($_SESSION['username'])) {
     // Redirect to login page if not logged in
@@ -21,6 +23,41 @@ if (isset($_POST['logout'])) {
     header("Location: login.php");
     exit();
 }
+
+// Fungsi untuk menghapus flora
+function deleteFlora($conn, $floraId, $username) {
+    $stmt = $conn->prepare("DELETE FROM flora WHERE id = ?");
+    $stmt->execute([$floraId]);
+    // Catat aktivitas penghapusan flora ke dalam log
+
+}
+
+// Proses form delete flora
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_flora'])) {
+    $floraId = $_POST['id_flora']; // Bergantung pada nama elemen form yang sebenarnya
+    deleteFlora($conn, $floraId, $username);
+    header("Location: dashboard.php");
+
+    exit();
+}
+
+// Fungsi untuk menghapus flora
+function deleteFauna($conn, $floraId, $username) {
+    $stmt = $conn->prepare("DELETE FROM fauna WHERE id = ?");
+    $stmt->execute([$floraId]);
+    // Catat aktivitas penghapusan flora ke dalam log
+
+}
+
+// Proses form delete flora
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_fauna'])) {
+    $floraId = $_POST['id_fauna']; // Bergantung pada nama elemen form yang sebenarnya
+    deleteFauna($conn, $floraId, $username);
+    header("Location: dashboard.php");
+
+    exit();
+}
+
 
 // Menampilkan username jika diperlukan
 $username = $_SESSION['username'];
@@ -81,6 +118,12 @@ $username = $_SESSION['username'];
                     break;
                 case 'tambah_fauna':
                     include 'tambah_fauna.php'; // You can create tambah_user.php for adding new users
+                    break;
+                case 'edit_fauna':
+                    include 'edit_fauna.php'; // You can create tambah_user.php for adding new users
+                    break;
+                case 'edit_flora':
+                    include 'edit_flora.php'; // You can create tambah_user.php for adding new users
                     break;
                 default:
                     // Default content if no action is specified

@@ -53,44 +53,46 @@ if(isset($_POST['submit'])) {
 
 
 <div class="container mx-auto p-8">
-    <h2 class="text-2xl font-bold mb-4">Tambah flora</h2>
-    <form action="" method="POST" enctype="multipart/form-data" class="w-full max-w-lg">
-        <div class="mb-4">
-            <label for="nama" class="block text-gray-700 text-sm font-bold mb-2">Nama:</label>
-            <input type="text" id="nama" name="nama" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-        <div class="mb-4">
-            <label for="nama_latin" class="block text-gray-700 text-sm font-bold mb-2">Nama Latin:</label>
-            <input type="text" id="nama_latin" name="nama_latin" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-        <div class="mb-4">
-            <label for="nama_family" class="block text-gray-700 text-sm font-bold mb-2">Nama Family:</label>
-            <input type="text" id="nama_family" name="nama_family" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-        <div class="mb-4">
-            <label for="deskripsi" class="block text-gray-700 text-sm font-bold mb-2">Deskripsi:</label>
-            <textarea id="deskripsi" name="deskripsi" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-        </div>
-        <div class="mb-4">
-            <label for="berat" class="block text-gray-700 text-sm font-bold mb-2">Berat (kg):</label>
-            <input type="text" id="berat" name="berat" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-        <div class="mb-4">
-            <label for="panjang" class="block text-gray-700 text-sm font-bold mb-2">Panjang (cm):</label>
-            <input type="text" id="panjang" name="panjang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-        <div class="mb-4">
-            <label for="tinggi" class="block text-gray-700 text-sm font-bold mb-2">Tinggi (cm):</label>
-            <input type="text" id="tinggi" name="tinggi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-        <div class="mb-4">
-            <label for="foto" class="block text-gray-700 text-sm font-bold mb-2">Foto:</label>
-            <input type="file" id="foto" name="foto" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-        <div class="flex items-center justify-between">
-            <button type="submit" name="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
-        </div>
-    </form>
+    <div class="bg-white border-2 p-4 mx-auto max-w-lg">
+        <h2 class="text-2xl font-bold mb-4">Tambah Fauna</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="mb-4">
+                <label for="nama" class="block text-sm font-bold mb-2">Nama:</label>
+                <input type="text" id="nama" name="nama" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="nama_latin" class="block text-sm font-bold mb-2">Nama Latin:</label>
+                <input type="text" id="nama_latin" name="nama_latin" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="nama_family" class="block text-sm font-bold mb-2">Nama Family:</label>
+                <input type="text" id="nama_family" name="nama_family" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="deskripsi" class="block text-sm font-bold mb-2">Deskripsi:</label>
+                <textarea id="deskripsi" name="deskripsi" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="berat" class="block text-sm font-bold mb-2">Berat (kg):</label>
+                <input type="number" id="berat" name="berat" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="panjang" class="block text-sm font-bold mb-2">Panjang (cm):</label>
+                <input type="number" id="panjang" name="panjang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="tinggi" class="block text-sm font-bold mb-2">Tinggi (cm):</label>
+                <input type="number" id="tinggi" name="tinggi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="foto" class="block text-sm font-bold mb-2">Foto:</label>
+                <input type="file" id="foto" name="foto" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" name="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 </body>

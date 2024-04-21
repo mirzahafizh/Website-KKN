@@ -60,16 +60,9 @@ if (isset($_SESSION['username'])) {
         <div class="hidden md:flex space-x-10">
             <a href="beranda.php" class="text-white hover:text-gray-300">About</a>
             <a href="artikel.php" class="text-white hover:text-gray-300">Article</a>
+            <a href="flora.php" class="text-white hover:text-gray-300">Flora</a>
+            <a href="fauna.php" class="text-white hover:text-gray-300">Fauna</a>
 
-            <!-- Dropdown Trigger -->
-            <div class="relative group">
-                <a href="#" class="text-white hover:text-gray-300">Gallery</a>
-                <!-- Dropdown Menu -->
-                <div class="absolute hidden group-hover:block dropdown-menu top-full left-[-20px] bg-green-700  text-white w-[100px] p-4 ">
-                    <a href="flora.php" class="block py-2 ">Flora</a>
-                    <a href="fauna.php" class="block py-2">Fauna</a>
-                </div>
-            </div>
 
             <!-- Menu Login/User -->
             <?php echo $menu; ?>
