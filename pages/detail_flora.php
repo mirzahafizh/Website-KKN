@@ -11,13 +11,12 @@ if(isset($_GET['id'])) {
     if(mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         // Ekstrak data
-        $nama = $row['nama'];
-        $namaLatin = $row['nama_latin'];
-        $namaFamily = $row['nama_family'];
-        $deskripsi = $row['deskripsi'];
-        $berat = $row['berat'];
-        $panjang = $row['panjang'];
-        $tinggi = $row['tinggi'];
+        $nama = $row['local_name'];
+        $namaLatin = $row['latin_name'];
+        $namaFamily = $row['family'];
+        $deskripsi = $row['description'];
+        $ekologi = $row['ekologi'];
+        $distribusi = $row['distribusi'];
         $foto = $row['foto'];
     } else {
         // Jika data tidak ditemukan, tampilkan pesan
@@ -50,10 +49,8 @@ if(isset($_GET['id'])) {
         <p class="text-lg mb-4"><span class="font-bold">Nama Latin:</span> <?php echo $namaLatin; ?></p>
         <p class="text-lg mb-4"><span class="font-bold">Nama Family:</span> <?php echo $namaFamily; ?></p>
         <p class="text-lg mb-4 break-words"><span class="font-bold">Deskripsi:</span> <?php echo $deskripsi; ?></p>
-        <p class="text-lg mb-4"><span class="font-bold">Berat:</span> <?php echo $berat; ?></p>
-        <p class="text-lg mb-4"><span class="font-bold">Panjang:</span> <?php echo $panjang; ?></p>
-        <p class="text-lg mb-4"><span class="font-bold">Tinggi:</span> <?php echo $tinggi; ?></p>
-    </div>
+        <p class="text-lg mb-4 break-words"><span class="font-bold">Ekologi:</span> <?php echo $ekologi; ?></p>
+        <p class="text-lg mb-4 break-words"><span class="font-bold">Distribusi:</span> <?php echo $distribusi; ?></p>
 </div>
 
 </body>

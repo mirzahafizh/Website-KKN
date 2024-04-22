@@ -39,13 +39,12 @@ if (mysqli_num_rows($result) > 0) {
             ?>
 
             <!-- Product details -->
-            <p><strong>Nama:</strong> <?php echo $flora['nama']; ?></p>
-            <p><strong>Nama:</strong> <?php echo $flora['nama_latin']; ?></p>
-            <p><strong>Nama:</strong> <?php echo $flora['nama_family']; ?></p>
-            <p><strong>Nama:</strong> <?php echo $flora['deskripsi']; ?></p>
-            <p><strong>Nama:</strong> <?php echo $flora['berat']; ?></p>
-            <p><strong>Nama:</strong> <?php echo $flora['tinggi']; ?></p>
-            <p><strong>Nama:</strong> <?php echo $flora['panjang']; ?></p>
+            <p><strong>Nama Lokal:</strong> <?php echo $flora['local_name']; ?></p>
+            <p><strong>Nama Latin:</strong> <?php echo $flora['latin_name']; ?></p>
+            <p><strong>Family:</strong> <?php echo $flora['family']; ?></p>
+            <p><strong>Deskripsi:</strong> <?php echo $flora['description']; ?></p>
+            <p><strong>Ekologi:</strong> <?php echo $flora['ekologi']; ?></p>
+            <p><strong>Distribusi:</strong> <?php echo $flora['distribusi']; ?></p>
             <p style="display:none;"><strong>ID Fauna:</strong> <?php echo $flora['id']; ?></p>
             <!-- Add more product details as needed -->
 

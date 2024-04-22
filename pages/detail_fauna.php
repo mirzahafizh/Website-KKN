@@ -17,7 +17,6 @@ if(isset($_GET['id'])) {
         $deskripsi = $row['deskripsi'];
         $berat = $row['berat'];
         $panjang = $row['panjang'];
-        $tinggi = $row['tinggi'];
         $foto = $row['foto'];
     } else {
         // Jika data tidak ditemukan, tampilkan pesan
@@ -29,6 +28,11 @@ if(isset($_GET['id'])) {
     $nama = "ID tidak tersedia";
     $deskripsi = "Maaf, ID hewan tidak tersedia.";
 }
+
+$berat_kg = $berat / 1000;
+
+// Konversi panjang ke m
+$panjang_m = $panjang * 1;
 ?>
 
 <!DOCTYPE html>
@@ -50,9 +54,8 @@ if(isset($_GET['id'])) {
         <p class="text-lg mb-4"><span class="font-bold">Nama Latin:</span> <?php echo $namaLatin; ?></p>
         <p class="text-lg mb-4"><span class="font-bold">Nama Family:</span> <?php echo $namaFamily; ?></p>
         <p class="text-lg mb-4 break-words"><span class="font-bold">Deskripsi:</span> <?php echo $deskripsi; ?></p>
-        <p class="text-lg mb-4"><span class="font-bold">Berat:</span> <?php echo $berat; ?></p>
-        <p class="text-lg mb-4"><span class="font-bold">Panjang:</span> <?php echo $panjang; ?></p>
-        <p class="text-lg mb-4"><span class="font-bold">Tinggi:</span> <?php echo $tinggi; ?></p>
+        <p class="text-lg mb-4"><span class="font-bold">Berat:</span> <?php echo $berat_kg; ?> kg</p>
+<p class="text-lg mb-4"><span class="font-bold">Panjang:</span> <?php echo $panjang_m; ?> m</p>
     </div>
 </div>
 

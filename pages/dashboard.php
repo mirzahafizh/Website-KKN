@@ -84,7 +84,7 @@ $username = $_SESSION['username'];
             <a href="?action=tambah_artikel" class="block py-2 px-4 text-black hover:bg-gray-300">Tambah Artikel</a>
             <a href="?action=tambah_flora" class="block py-2 px-4 text-black hover:bg-gray-300">Tambah Flora</a>
             <a href="?action=tambah_fauna" class="block py-2 px-4 text-black hover:bg-gray-300">Tambah Fauna</a>
-            <a href="beranda.php" class="block py-2 px-4 text-black hover:bg-gray-300">Beranda</a>
+            <a href="../index.php" class="block py-2 px-4 text-black hover:bg-gray-300">Beranda</a>
             <form method="post" action="" class="mt-[50px]">
                 <button type="submit" name="logout" class="block py-2 px-4 w-10/12 ml-2 rounded-lg text-black bg-[#FF8787] hover:bg-red-700">Logout</button>
             </form>

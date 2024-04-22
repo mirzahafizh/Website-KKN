@@ -39,7 +39,12 @@ if (mysqli_num_rows($result) > 0) {
             ?>
 
             <!-- Product details -->
-            <p><strong>Nama:</strong> <?php echo $fauna['nama']; ?></p>
+            <p><strong>Nama Lokal:</strong> <?php echo $fauna['nama']; ?></p>
+            <p><strong>Nama Latin:</strong> <?php echo $fauna['nama_latin']; ?></p>
+            <p><strong>Family:</strong> <?php echo $fauna['nama_family']; ?></p>
+            <p style="word-wrap: break-word;"><strong>Deskripsi:</strong> <?php echo $fauna['deskripsi']; ?></p>
+            <p><strong>Panjang:</strong> <?php echo $fauna['panjang']; ?></p>
+            <p><strong>Berat:</strong> <?php echo $fauna['berat']; ?></p>
             <p style="display:none;"><strong>ID Fauna:</strong> <?php echo $fauna['id']; ?></p>
             <!-- Add more product details as needed -->
 

@@ -8,7 +8,6 @@ if(isset($_POST['submit'])) {
     $nama_family = $_POST['nama_family'];
     $deskripsi = $_POST['deskripsi'];
     $berat = $_POST['berat'];
-    $panjang = $_POST['panjang'];
     $tinggi = $_POST['tinggi'];
 
     // Periksa apakah file telah diunggah dengan benar
@@ -54,10 +53,10 @@ if(isset($_POST['submit'])) {
 
 <div class="container mx-auto p-8">
     <div class="bg-white border-2 p-4 mx-auto max-w-lg">
-        <h2 class="text-2xl font-bold mb-4">Tambah Flora</h2>
+        <h2 class="text-2xl font-bold mb-4">Tambah Fauna</h2>
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="mb-4">
-                <label for="nama" class="block text-sm font-bold mb-2">Nama:</label>
+                <label for="nama" class="block text-sm font-bold mb-2">Nama Lokal:</label>
                 <input type="text" id="nama" name="nama" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
@@ -65,7 +64,7 @@ if(isset($_POST['submit'])) {
                 <input type="text" id="nama_latin" name="nama_latin" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="nama_family" class="block text-sm font-bold mb-2">Nama Family:</label>
+                <label for="nama_family" class="block text-sm font-bold mb-2">Family:</label>
                 <input type="text" id="nama_family" name="nama_family" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
@@ -77,12 +76,8 @@ if(isset($_POST['submit'])) {
                 <input type="number" id="berat" name="berat" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="panjang" class="block text-sm font-bold mb-2">Panjang (cm):</label>
+                <label for="panjang" class="block text-sm font-bold mb-2">Panjang (m):</label>
                 <input type="number" id="panjang" name="panjang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            </div>
-            <div class="mb-4">
-                <label for="tinggi" class="block text-sm font-bold mb-2">Tinggi (cm):</label>
-                <input type="number" id="tinggi" name="tinggi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
                 <label for="foto" class="block text-sm font-bold mb-2">Foto:</label>

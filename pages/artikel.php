@@ -39,7 +39,7 @@ mysqli_close($conn);
     <div class="bg-white  w-full p-6 ">
     <?php foreach ($articles as $article): ?>
         <div class="mb-8 bg-gray-100  p-6 rounded-lg hover:shadow-xl transition-transform transform hover:scale-105">
-            <a href="article_detail.php?id=<?= $article['id'] ?>" class="flex ">
+            <a href="detail_artikel.php?id=<?= $article['id'] ?>" class="flex ">
                 <div class="mr-6 w-1/6 mb-4">
                     <img src="../uploads/<?= $article['gambar'] ?>" alt="Gambar Artikel" class="w-auto h-40 mx-auto rounded-lg object-fit mt-4 ">
                 </div>

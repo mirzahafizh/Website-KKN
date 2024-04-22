@@ -2,14 +2,13 @@
 include 'config.php'; 
 
 if(isset($_POST['submit'])) {
-    // Tangkap data dari formulir
-    $nama = $_POST['nama'];
-    $nama_latin = $_POST['nama_latin'];
-    $nama_family = $_POST['nama_family'];
-    $deskripsi = $_POST['deskripsi'];
-    $berat = $_POST['berat'];
-    $panjang = $_POST['panjang'];
-    $tinggi = $_POST['tinggi'];
+    $local_name = $_POST['local_name'];
+    $latin_name = $_POST['latin_name'];
+    $family = $_POST['family'];
+    $description = $_POST['description'];
+    $ekologi = $_POST['ekologi'];
+    $distribusi = $_POST['distribusi'];
+
 
     // Periksa apakah file telah diunggah dengan benar
     if(isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
@@ -31,7 +30,7 @@ if(isset($_POST['submit'])) {
             echo "<script>alert('Hanya file gambar dengan format JPG, JPEG, PNG, atau GIF yang diperbolehkan!')</script>";
         } else {
             // Buat kueri SQL INSERT
-            $sql = "INSERT INTO flora (nama, nama_latin, nama_family, deskripsi, berat, panjang, tinggi, foto) VALUES ('$nama', '$nama_latin', '$nama_family', '$deskripsi', '$berat', '$panjang', '$tinggi', '$foto')";
+            $sql = "INSERT INTO flora (local_name, latin_name, family, description,ekologi,distribusi,foto) VALUES ('$local_name','$latin_name', '$family', '$description','$ekologi','$distribusi', '$foto')";
 
             // Jalankan kueri
             if(mysqli_query($conn, $sql)) {
@@ -54,35 +53,31 @@ if(isset($_POST['submit'])) {
 
 <div class="container mx-auto p-8">
     <div class="bg-white border-2 p-4 mx-auto max-w-lg">
-        <h2 class="text-2xl font-bold mb-4">Tambah Fauna</h2>
+        <h2 class="text-2xl font-bold mb-4">Tambah Flora</h2>
         <form action="" method="POST" enctype="multipart/form-data">
-            <div class="mb-4">
-                <label for="nama" class="block text-sm font-bold mb-2">Nama:</label>
-                <input type="text" id="nama" name="nama" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <div class="mb-4">
+                <label for="local_name" class="block text-sm font-bold mb-2">Nama Lokal:</label>
+                <input type="text" id="local_name" name="local_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="nama_latin" class="block text-sm font-bold mb-2">Nama Latin:</label>
-                <input type="text" id="nama_latin" name="nama_latin" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <label for="latin_name" class="block text-sm font-bold mb-2">Nama Latin:</label>
+                <input type="text" id="latin_name" name="latin_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="nama_family" class="block text-sm font-bold mb-2">Nama Family:</label>
-                <input type="text" id="nama_family" name="nama_family" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <label for="family" class="block text-sm font-bold mb-2">Family:</label>
+                <input type="text" id="family" name="family" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="deskripsi" class="block text-sm font-bold mb-2">Deskripsi:</label>
-                <textarea id="deskripsi" name="deskripsi" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                <label for="description" class="block text-sm font-bold mb-2">Deskripsi:</label>
+                <textarea id="description" name="description" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
             <div class="mb-4">
-                <label for="berat" class="block text-sm font-bold mb-2">Berat (kg):</label>
-                <input type="number" id="berat" name="berat" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <label for="ekologi" class="block text-sm font-bold mb-2">Ekologi:</label>
+                <textarea id="ekologi" name="ekologi" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
             <div class="mb-4">
-                <label for="panjang" class="block text-sm font-bold mb-2">Panjang (cm):</label>
-                <input type="number" id="panjang" name="panjang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            </div>
-            <div class="mb-4">
-                <label for="tinggi" class="block text-sm font-bold mb-2">Tinggi (cm):</label>
-                <input type="number" id="tinggi" name="tinggi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <label for="distribusi" class="block text-sm font-bold mb-2">Distribusi:</label>
+                <textarea id="distribusi" name="distribusi" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
             <div class="mb-4">
                 <label for="foto" class="block text-sm font-bold mb-2">Foto:</label>
